@@ -1,0 +1,12 @@
+name: millenium_challenge
+
+packages:
+  - packages/**
+
+scripts:
+  prepare:
+    exec: dart pub global activate dart_frog_cli && melos bootstrap
+  serve:
+    exec: dart_frog dev
+    packageFilters:
+      scope: backend
