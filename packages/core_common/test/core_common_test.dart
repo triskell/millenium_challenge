@@ -1,4 +1,4 @@
-import 'package:core_frontend/core_frontend.dart';
+import 'package:core_common/core_common.dart';
 import 'package:test/test.dart';
 
 void main() {
