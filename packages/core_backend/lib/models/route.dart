@@ -2,12 +2,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'route.freezed.dart';
 
-/// {@template template_name}
+/// {@template route}
 /// Model of routes stored in database.
 /// {@endtemplate}
 @freezed
 class Route with _$Route {
-  /// {@macro template_name}
+  /// {@macro route}
   ///
   /// Factory constructor for [Route].
   factory Route({

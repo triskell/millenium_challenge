@@ -3,8 +3,10 @@ import 'package:core_backend/services/millennium_json_service.dart';
 import 'package:test/test.dart';
 
 void main() {
+  final MillenniumJsonService service = MillenniumJsonService();
+
   test('Service reads JSON file using relative path', () async {
-    var milleniumFalcon = await MillenniumJsonService.read(
+    var milleniumFalcon = await service.read(
       '../../examples/example1/millennium-falcon.json',
     );
 
@@ -20,7 +22,7 @@ void main() {
   });
 
   test('Service reads JSON file using absolute path', () async {
-    var millenniumFalcon = await MillenniumJsonService.read(
+    var millenniumFalcon = await service.read(
       '/Users/thomas/workspace/millenium_challenge/examples/example1/millennium-falcon.json',
     ); // WARNING: Please update your aboslute path when executing this test.
 

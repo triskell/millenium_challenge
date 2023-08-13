@@ -4,9 +4,13 @@ import 'package:test/test.dart';
 
 void main() {
   test('Service reads database file using relative path', () {
-    var routes = RoutesDatabaseService.read(
-      '../../examples/example1/universe.db',
+    final service = RoutesDatabaseService(
+      dbPath: '../../examples/example1/universe.db',
     );
+
+    final routes = service.getAll();
+
+    service.dispose();
 
     /*
       Database contains the following routes:
@@ -59,9 +63,14 @@ void main() {
   });
 
   test('Service reads database file using absolute path', () {
-    var routes = RoutesDatabaseService.read(
-      '/Users/thomas/workspace/millenium_challenge/examples/example1/universe.db',
+    final service = RoutesDatabaseService(
+      dbPath:
+          '/Users/thomas/workspace/millenium_challenge/examples/example1/universe.db',
     ); // WARNING: Please update your aboslute path when executing this test.
+
+    final routes = service.getAll();
+
+    service.dispose();
 
     /*
       Database contains the following routes:

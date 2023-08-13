@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'millennium_falcon.freezed.dart';
 part 'millennium_falcon.g.dart';
 
-/// {@template template_name}
+/// {@template millennium_falcon}
 /// Model for the backend's input data JSON file.
 ///
 /// File should be represented as:
@@ -18,7 +18,7 @@ part 'millennium_falcon.g.dart';
 /// {@endtemplate}
 @freezed
 class MillenniumFalcon with _$MillenniumFalcon {
-  /// {@macro template_name}
+  /// {@macro millennium_falcon}
   ///
   /// Factory constructor for [MillenniumFalcon].
   factory MillenniumFalcon({
@@ -38,7 +38,7 @@ class MillenniumFalcon with _$MillenniumFalcon {
     @JsonKey(name: 'routes_db') required String routesDb,
   }) = _MillenniumFalcon;
 
-  /// {@macro template_name}
+  /// {@macro millennium_falcon}
   ///
   /// Creates a [MillenniumFalcon] from a JSON object.
   factory MillenniumFalcon.fromJson(Map<String, dynamic> json) =>

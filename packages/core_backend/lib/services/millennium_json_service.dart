@@ -12,7 +12,7 @@ final class MillenniumJsonService {
   ///  or relative.
   ///
   /// Returns: [MillenniumFalcon] object stored in JSON file.
-  static Future<MillenniumFalcon> read(String path) async {
+  Future<MillenniumFalcon> read(String path) async {
     var content = await File(path).readAsString();
     var json = jsonDecode(content);
     return MillenniumFalcon.fromJson(json);

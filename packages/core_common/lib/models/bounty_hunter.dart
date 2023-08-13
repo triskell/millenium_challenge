@@ -3,12 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'bounty_hunter.freezed.dart';
 part 'bounty_hunter.g.dart';
 
-/// {@template template_name}
+/// {@template bounty_hunter}
 /// Model for a bounty hunters position.
 /// {@endtemplate}
 @freezed
 class BountyHunter with _$BountyHunter {
-  /// {@macro template_name}
+  /// {@macro bounty_hunter}
   const factory BountyHunter({
     /// Name of the planet.
     ///
@@ -21,7 +21,7 @@ class BountyHunter with _$BountyHunter {
     required int day,
   }) = _BountyHunter;
 
-  /// {@macro template_name}
+  /// {@macro bounty_hunter}
   factory BountyHunter.fromJson(Map<String, dynamic> json) =>
       _$BountyHunterFromJson(json);
 }
