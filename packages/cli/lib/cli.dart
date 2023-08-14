@@ -18,5 +18,7 @@ Future<int> computeTheOdds(String pathToMillenniumFalconJson,
     empireJsonPath: pathToEmpireJson,
   );
 
+  routeService.dispose();
+
   return (theOdds * 100).floor();
 }
