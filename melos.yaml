@@ -6,7 +6,19 @@ packages:
 scripts:
   prepare:
     exec: dart pub global activate dart_frog_cli && melos bootstrap
+  install:
+    exec: dart pub global activate --source path .
+    packageFilters:
+      scope: cli
+  uninstall:
+    exec: dart pub global deactivate cli
+    packageFilters:
+      scope: cli
   serve:
     exec: dart_frog dev
     packageFilters:
       scope: backend
+  test:
+    exec: dart test
+    packageFilters:
+      scope: core_*
