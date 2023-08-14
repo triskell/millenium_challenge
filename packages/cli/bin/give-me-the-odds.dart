@@ -11,7 +11,5 @@ void main(List<String> arguments) async {
     arguments.length > 2 ? arguments[2] : pathToDb,
   );
 
-  print(
-    odds,
-  );
+  print(odds);
 }
