@@ -7,6 +7,8 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
+  core_backend:
+    path: ../core_backend
   dart_frog: ^1.0.0
   dart_frog_cli: ^1.0.0
 
