@@ -3,26 +3,45 @@ name: millenium_challenge
 packages:
   - packages/**
 
+command:
+  bootstrap:
+    hooks:
+      post: melos run prepare && melos run install && melos run build
+  clean:
+    hooks:
+      pre: melos run uninstall
+
 scripts:
   prepare:
-    exec: dart pub global activate dart_frog_cli && melos bootstrap
+    description: Installs required dependencies.
+    exec: dart pub global activate dart_frog_cli
+
   install:
+    description: Installs the CLI globally as give-me-the-odds.
     exec: dart pub global activate --source path .
     packageFilters:
       scope: cli
-  build:
-    exec: flutter build web
-    packageFilters:
-      scope: frontend
+
   uninstall:
+    description: Uninstalls the CLI globally.
     exec: dart pub global deactivate cli
     packageFilters:
       scope: cli
+
+  build:
+    description: Builds the web frontend application.
+    exec: flutter build web
+    packageFilters:
+      scope: frontend
+
   serve:
+    description: Starts the backend server.
     exec: dart_frog dev
     packageFilters:
       scope: backend
+      
   test:
+    description: Runs tests.
     exec: dart test
     packageFilters:
       scope: core_*
