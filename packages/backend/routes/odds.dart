@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:core_backend/core_backend.dart';
 import 'package:dart_frog/dart_frog.dart';
 
+import '../config.dart';
+
 /// Handles the route to compute the odds.
 ///
 /// Accepts POST requests with a JSON body containing the empire data.
@@ -34,10 +36,6 @@ Future<Response> onRequest(RequestContext context) async {
 ///
 /// Returns: The response containing the integer (0-100) odds as a [String].
 Future<Response> _handleGetRequest(Request request) async {
-  const pathToMillenniumFalconJson =
-      '../../examples/example1/millennium-falcon.json';
-  const pathToDb = '../../examples/example1/universe.db';
-
   final body = await request.body();
   final json = jsonDecode(body);
 
@@ -45,7 +43,7 @@ Future<Response> _handleGetRequest(Request request) async {
 
   final millenniumService = MillenniumJsonService();
   final routeService = RoutesDatabaseService(
-    dbPath: pathToDb,
+    dbPath: Config.pathToDb,
   );
 
   final navigationService = NavigationService(
@@ -54,7 +52,7 @@ Future<Response> _handleGetRequest(Request request) async {
   );
 
   final theOdds = await navigationService.getTheOdds(
-    millenniumJsonPath: pathToMillenniumFalconJson,
+    millenniumJsonPath: Config.pathToMillenniumFalconJson,
     empire: empire,
   );
 
