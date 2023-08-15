@@ -10,6 +10,10 @@ scripts:
     exec: dart pub global activate --source path .
     packageFilters:
       scope: cli
+  build:
+    exec: flutter build web
+    packageFilters:
+      scope: frontend
   uninstall:
     exec: dart pub global deactivate cli
     packageFilters:
