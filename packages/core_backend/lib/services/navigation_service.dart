@@ -1,8 +1,6 @@
 import 'dart:math';
 
 import 'package:core_backend/core_backend.dart';
-import 'package:core_backend/models/millennium_falcon.dart';
-import 'package:core_common/core_common.dart';
 
 import '../models/travel_state.dart';
 
@@ -12,13 +10,11 @@ import '../models/travel_state.dart';
 final class NavigationService {
   final RoutesDatabaseService _routesDatabaseService;
   final MillenniumJsonService _millenniumJsonService;
-  final EmpireJsonService _empireJsonService;
 
   /// {@macro navigation_service}
   NavigationService(
     this._routesDatabaseService,
     this._millenniumJsonService,
-    this._empireJsonService,
   );
 
   /// Get the probability of a bounty hunter being captured.
@@ -57,11 +53,10 @@ final class NavigationService {
   /// Returns: The odds of success.
   Future<double> getTheOdds({
     required String millenniumJsonPath,
-    required String empireJsonPath,
+    required Empire empire,
   }) async {
     final millenniumFalcon =
         await _millenniumJsonService.read(millenniumJsonPath);
-    final empire = await _empireJsonService.read(empireJsonPath);
     final bountyHunterDays =
         _makeTravels(millenniumFalcon: millenniumFalcon, empire: empire)
             .map((travel) => travel.daysOnPlanetWithBountyHunters);

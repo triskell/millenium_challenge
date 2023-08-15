@@ -7,15 +7,15 @@ Future<int> computeTheOdds(String pathToMillenniumFalconJson,
   final routeService = RoutesDatabaseService(
     dbPath: pathToDb,
   );
-  final navigationService = NavigationService(
-    routeService,
-    millenniumService,
-    empireService,
+  final navigationService = NavigationService(routeService, millenniumService);
+
+  final empire = await empireService.read(
+    pathToEmpireJson,
   );
 
   final theOdds = await navigationService.getTheOdds(
     millenniumJsonPath: pathToMillenniumFalconJson,
-    empireJsonPath: pathToEmpireJson,
+    empire: empire,
   );
 
   routeService.dispose();
