@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 
+/// {@template counter_widget}
+/// Widget to display a counter with buttons to increment and decrement.
+/// {@endtemplate}
 class CounterWidget extends StatelessWidget {
   final int count, min, max;
   final Function(int newCount) onCountChanged;
 
+  /// {@macro counter_widget}
+  ///
+  /// Parameters:
+  /// - [count]: The initial count.
+  /// - [min]: The minimum value for the count. Default is 0.
+  /// - [max]: The maximum value for the count. Default is 100.
+  /// - [onCountChanged]: Callback when the count is changed.
   const CounterWidget({
     super.key,
     required this.count,

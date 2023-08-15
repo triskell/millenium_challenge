@@ -2,11 +2,20 @@ import 'package:core_common/core_common.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/bounty_hunters_widget.dart';
 
+/// {@template configuration_form_widget}
+/// Widget to display the configuration form for the empire data.
+/// {@endtemplate}
 class ConfigurationFormWidget extends StatefulWidget {
   final Empire initialEmpire;
   final Function(Empire newEmpire) onSave;
   final VoidCallback onCancel;
 
+  /// {@macro configuration_form_widget}
+  ///
+  /// Parameters:
+  /// - [initialEmpire]: The initial [Empire] to display in the form.
+  /// - [onSave]: Callback when the form is saved.
+  /// - [onCancel]: Callback when the form is cancelled.
   const ConfigurationFormWidget({
     super.key,
     required this.initialEmpire,

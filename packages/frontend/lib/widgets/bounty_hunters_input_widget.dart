@@ -2,9 +2,16 @@ import 'package:core_common/core_common.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/counter_widget.dart';
 
+/// {@template bounty_hunters_input_widget}
+/// Widget to display the input to create a new [BountyHunter].
+/// {@endtemplate}
 class BountyHuntersInputWidget extends StatefulWidget {
   final Function(BountyHunter) onHunterAdded;
 
+  /// {@macro bounty_hunters_input_widget}
+  ///
+  /// Parameters:
+  /// - [onHunterAdded]: Callback when a new [BountyHunter] is created.
   const BountyHuntersInputWidget({
     super.key,
     required this.onHunterAdded,

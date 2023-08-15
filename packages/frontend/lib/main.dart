@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/widgets/odds_screen.dart';
 
+/// Flutter app entrypoint.
 void main() {
-  runApp(const MyApp());
+  runApp(const OddsApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/// {@template odds_app}
+/// The main application widget.
+/// {@endtemplate}
+class OddsApp extends StatelessWidget {
+  const OddsApp({super.key});
 
   @override
   Widget build(BuildContext context) {

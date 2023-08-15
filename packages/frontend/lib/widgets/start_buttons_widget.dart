@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+/// {@template start_buttons_widget}
+/// Widget to display the start buttons (Compute and Configure).
+/// {@endtemplate}
 class StartButtonsWidget extends StatelessWidget {
   final VoidCallback onTapCompute;
   final VoidCallback onTapConfiguration;
 
+  /// {@macro start_buttons_widget}
+  ///
+  /// Parameters:
+  /// - [onTapCompute]: Callback when the user taps on the compute button.
+  /// - [onTapConfiguration]: Callback when the user taps on the configuration.
   const StartButtonsWidget({
     super.key,
     required this.onTapCompute,

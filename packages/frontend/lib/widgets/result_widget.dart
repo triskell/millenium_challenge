@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
+/// {@template result_widget}
+/// Widget to display the result of the odds computation.
+/// {@endtemplate}
 class ResultWidget extends StatelessWidget {
   final int odds;
   final VoidCallback onTapCompute;
   final VoidCallback onTapConfiguration;
 
+  /// {@macro result_widget}
+  ///
+  /// Parameters:
+  /// - [odds]: The odds of success as an int between 0 and 100.
+  /// - [onTapCompute]: Callback when the user taps on the compute button.
+  /// - [onTapConfiguration]: Callback when the user taps on the configuration
+  /// button.
   const ResultWidget(
       {super.key,
       required this.odds,

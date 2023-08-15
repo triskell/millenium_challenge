@@ -9,9 +9,13 @@ import '../datasources/odds_api.dart';
 import '../repositories/odds_repository.dart';
 import 'result_widget.dart';
 
+/// {@template odds_screen}
+/// Screen to display the odds of success for the Millennium Challenge.
+/// {@endtemplate}
 class OddsScreen extends StatefulWidget {
   OddsScreen({Key? key}) : super(key: key);
 
+  /// An instance of [OddsRepository].
   final oddsRepository = OddsRepository(
     api: OddsApi(
       client: Dio(),
