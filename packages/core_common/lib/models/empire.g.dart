@@ -15,5 +15,5 @@ _$_Empire _$$_EmpireFromJson(Map<String, dynamic> json) => _$_Empire(
 
 Map<String, dynamic> _$$_EmpireToJson(_$_Empire instance) => <String, dynamic>{
       'countdown': instance.countdown,
-      'bounty_hunters': instance.bountyHunters,
+      'bounty_hunters': instance.bountyHunters.map((e) => e.toJson()).toList(),
     };
